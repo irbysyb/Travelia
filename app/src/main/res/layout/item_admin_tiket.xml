@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="#EBEBEB"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Informasi Tiket -->
+        <TextView
+            android:id="@+id/tvAdminItemRute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medan - Lhokseumawe (TK001)"
+            android:textColor="#111111"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAdminItemInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="30/10/2026 • Jam: 15:00"
+            android:textColor="#555555"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvAdminItemHargaKursi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Rp 170,000 | Sisa Kursi: 5"
+            android:textColor="#FF7A22"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- Garis Pemisah Tipis -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#C5C5C5" />
+
+        <!-- Tombol Aksi (Edit & Hapus) di Bawah, Rata Kanan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditTiket"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:text="Edit"
+                android:textColor="#5B8FF9"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHapusTiket"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Hapus"
+                android:textColor="#D32F2F"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp"
+    tools:context=".OptionToEnterActivity">
+
+    <!-- Logo Travelia di Pojok Kiri Atas -->
+    <ImageView
+        android:id="@+id/imgLogoSmall"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="Logo Travelia"
+        android:src="@drawable/ic_travelia_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Ilustrasi Koper & Travel -->
+    <ImageView
+        android:id="@+id/imgIllustration"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:contentDescription="Ilustrasi Travel"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_travel_illustration"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcomeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoSmall" />
+
+    <!-- Judul Ucapan Selamat Datang -->
+    <TextView
+        android:id="@+id/tvWelcomeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Hai, Selamat datang di Travelia."
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcomeDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Deskripsi Singkat -->
+    <TextView
+        android:id="@+id/tvWelcomeDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:lineSpacingExtra="2dp"
+        android:text="Aplikasi ini menjadi solusi terbaik bagi para pecinta perjalanan untuk merencanakan, mengelola, dan menikmati setiap perjalanan dengan mudah."
+        android:textColor="#666666"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Tombol Login -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="12dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FF8A3D"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Tombol Register -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:text="Register"
+        android:letterSpacing="0"
+        android:textAllCaps="false"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#DDDDDD"
+        app:strokeWidth="1.5dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Badge Status (Aktif / Tidak Aktif) -->
+        <TextView
+            android:id="@+id/tvStatusAktif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_status_badge"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Aktif"
+            android:textColor="#4CAF50"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Tombol Pengingat Notifikasi (Posisi asli dengan margin top 80dp) -->
+        <ImageView
+            android:id="@+id/btnNotification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Notification Reminder"
+            android:padding="4dp"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#1E88E5"
+            tools:visibility="visible" />
+
+        <!-- Tombol Lapor Perjalanan (Dipasang dengan margin top 80dp yang SAMA PERSIS agar posisinya tidak bergeser) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLaporPerjalanan"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="80dp"
+            android:text="Lapor Perjalanan"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="#D32F2F"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <!-- Tombol Hapus (Muncul saat waktu kedaluwarsa/00:00:00) -->
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete Schedule"
+            android:padding="4dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#E53935"
+            tools:visibility="gone" />
+
+        <!-- Rute Perjalanan -->
+        <TextView
+            android:id="@+id/tvRute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#111111"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnNotification"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStatusAktif"
+            tools:text="Medan - Lhokseumawe" />
+
+        <!-- Tipe Armada (Toyota Hiace Premio) -->
+        <TextView
+            android:id="@+id/tvBusType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRute"
+            tools:text="Toyota Hiace Premio" />
+
+        <!-- Tanggal Keberangkatan (Format Indonesia) -->
+        <TextView
+            android:id="@+id/tvDepartureDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="#424242"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBusType"
+            tools:text="30 Oktober 2026" />
+
+        <!-- Jam Keberangkatan (Di bawah Tanggal) -->
+        <TextView
+            android:id="@+id/tvDepartureTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#3D5CFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDepartureDate"
+            tools:text="08:00" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#EEEEEE"
+            app:layout_constraintTop_toBottomOf="@id/tvDepartureTime" />
+
+        <!-- Container Countdown Timer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Berangkat Dalam:"
+                android:textColor="#757575"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#D32F2F"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="2 Hari 04:15:30" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

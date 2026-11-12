@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ID Tiket di sebelah kiri atas -->
+            <TextView
+                android:id="@+id/tvIdTiketLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: TK00-0000"
+                android:textColor="#5B8FF9"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvRuteLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Banda Aceh ➔ Medan"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvJadwalLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Jadwal: 04/11/2026 (08:00)"
+            android:textColor="#616161"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="10dp"
+            android:background="#EEEEEE" />
+
+        <!-- Kategori berada di atas deskripsi dengan jarak ke bawah -->
+        <TextView
+            android:id="@+id/tvKategoriLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFE0B2"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Kategori"
+            android:textColor="#E65100"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Deskripsi keluhan dengan jarak bawah dari kategori -->
+        <TextView
+            android:id="@+id/tvDeskripsiLaporan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi keluhan penumpang..."
+            android:textColor="#424242"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnHapusLaporan"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="6dp"
+            android:text="Tandai Selesai / Hapus"
+            android:textColor="#D32F2F" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

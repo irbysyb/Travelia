@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Garis Indikator Atas -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="#D0D0D0" />
+
+    <!-- Judul Header (Diganti menjadi Laporan Kendala) -->
+    <TextView
+        android:id="@+id/tvSheetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Laporkan Kendala Perjalanan"
+        android:textColor="#D32F2F"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Baris Rute & ID Tiket (Sejajar) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvSheetRute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Medan ➔ Banda Aceh"
+            android:textColor="#111111"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSheetId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: TRV-882103"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            tools:text="ID: TRV-882103" />
+    </LinearLayout>
+
+    <!-- Tanggal Keberangkatan -->
+    <TextView
+        android:id="@+id/tvSheetTanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="4 November 2026"
+        android:textColor="#555555"
+        android:textSize="13sp" />
+
+    <!-- Jam Keberangkatan -->
+    <TextView
+        android:id="@+id/tvSheetWaktu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Jam: 22:00"
+        android:textColor="#555555"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="16dp"
+        android:background="#E0E0E0" />
+
+    <!-- Bagian QR Code DIHAPUS, diganti dengan Input Form Laporan -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih Jenis Kendala:"
+        android:textColor="#111111"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etKategoriKendala"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contoh: Supir Ugal-ugalan / Kursi Rusak"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDeskripsiKeluhan"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="top"
+            android:hint="Tuliskan detail keluhan Anda secara jelas..."
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Total Tagihan DIHAPUS, diganti Tombol Kirim Laporan -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnKirimLaporan"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Kirim Laporan"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#D32F2F"
+        app:cornerRadius="14dp" />
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Handle Bar Atas -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="#CCCCCC" />
+
+    <!-- Gambar Utama Artikel -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgSheetArticle"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.RoundedSquare" />
+
+    <!-- Judul Artikel -->
+    <TextView
+        android:id="@+id/tvSheetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#222222"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="#E0E0E0" />
+
+    <!-- Isi Teks Artikel Lengkap -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <TextView
+            android:id="@+id/tvSheetDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Tombol Tutup -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCloseSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tutup"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

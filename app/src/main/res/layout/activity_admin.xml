@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fitsSystemWindows="true"
+    tools:context=".AdminActivity">
+
+    <!-- Header Bar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/headerAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp">
+
+            <ImageView
+                android:id="@+id/imgLogoAdmin"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_travelia_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnLogoutAdmin"
+                app:layout_constraintStart_toEndOf="@+id/imgLogoAdmin"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panel Admin"
+                    android:textColor="#111111"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kelola Tiket Travelia"
+                    android:textColor="#888888"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogoutAdmin"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keluar"
+                android:textColor="#D32F2F"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scroll Content Utama -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerAdmin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="24dp">
+
+            <!-- Card 1: Banner / Tombol Aksi Utama -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvTitleAction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manajemen Tiket Travel"
+                        android:textColor="#222222"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDescAction"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Tambahkan jadwal, harga, dan ketersediaan tiket baru ke Firestore secara otomatis."
+                        android:textColor="#666666"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitleAction" />
+
+                    <View
+                        android:id="@+id/dividerAdmin1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#E0E0E0"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDescAction" />
+
+                    <!-- Tombol + Buat Tiket Baru -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnToggleForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="#FF7A22"
+                        android:text="+ Buat Tiket Baru"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp"
+                        app:layout_constraintTop_toBottomOf="@+id/dividerAdmin1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2: Form Input Tiket Baru -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFormInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Form Input Tiket Baru"
+                        android:textColor="#222222"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="#E0E0E0" />
+
+                    <!-- ID Tiket -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID Tiket"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etIdTiket"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:hint="Masukkan ID Tiket Unik"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <!-- Kota Asal -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kota Asal"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        app:hintEnabled="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etAdminAsal"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Pilih Kota Asal"
+                            android:inputType="none"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Kota Tujuan -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kota Tujuan"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        app:hintEnabled="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etAdminTujuan"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Pilih Kota Tujuan"
+                            android:inputType="none"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Tanggal Perjalanan -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Perjalanan"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAdminTanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="Pilih Tanggal Perjalanan"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <!-- Waktu Keberangkatan -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Waktu Keberangkatan (Jam)"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        app:hintEnabled="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etAdminWaktu"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Pilih Jam Keberangkatan"
+                            android:inputType="none"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Harga (Rp) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Harga Tiket (Rp)"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAdminHarga"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:hint="Contoh: 150000"
+                        android:inputType="number"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <!-- Sisa Kursi -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sisa Kursi Tempat Sit"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAdminKursi"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:hint="Contoh: 10"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <!-- Nama Armada Bus -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Armada Bus"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAdminNamaArmada"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:hint="Contoh: Travelia Express"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <!-- Tipe Armada -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tipe Kendaraan / Armada"
+                        android:textColor="#111111"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAdminTipeArmada"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_rounded_input"
+                        android:hint="Contoh: Toyota Hiace Premio"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimpanTiket"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:backgroundTint="#008855"
+                        android:text="Simpan ke Firestore"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3: Kelola & Lihat Daftar Tiket Tersimpan -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Header Toggle Menggunakan ConstraintLayout Agar Responsif -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btnToggleListTiket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tvAdminDaftarTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:text="Daftar Tiket Terdaftar"
+                            android:textColor="#222222"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/btnLihatTiket"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTotalTiketCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="Klik untuk melihat &amp; mengelola tiket"
+                            android:textColor="#777777"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/btnLihatTiket"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvAdminDaftarTitle" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLihatTiket"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Lihat Data"
+                            android:textAllCaps="false"
+                            android:textColor="#5B8FF9"
+                            android:textSize="12sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeColor="#5B8FF9" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Container List Tiket Beserta Search Bar -->
+                    <LinearLayout
+                        android:id="@+id/containerListTiket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="#E0E0E0" />
+
+                        <!-- Kotak Pencarian Tiket Admin -->
+                        <EditText
+                            android:id="@+id/etSearchAdmin"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="@drawable/bg_rounded_input"
+                            android:hint="Cari rute, ID, atau armada..."
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingHorizontal="14dp"
+                            android:textSize="13sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvAdminTiket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:listitem="@layout/item_admin_tiket" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 4: Laporan Kendala / Perjalanan User -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Header Toggle Laporan -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvAdminLaporanTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:text="Laporan Kendala User"
+                            android:textColor="#222222"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/btnLihatLaporan"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAdminLaporanSubtitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="Keluhan &amp; kendala perjalanan penumpang"
+                            android:textColor="#777777"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/btnLihatLaporan"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvAdminLaporanTitle" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLihatLaporan"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Lihat Laporan"
+                            android:textAllCaps="false"
+                            android:textColor="#E65100"
+                            android:textSize="12sp"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeColor="#E65100" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Container List Laporan -->
+                    <LinearLayout
+                        android:id="@+id/containerListLaporan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="#E0E0E0" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvAdminLaporan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:listitem="@layout/item_laporan_admin" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

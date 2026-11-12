@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    tools:context=".OtpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Logo Kiri Atas -->
+        <ImageView
+            android:id="@+id/imgLogoSmall"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Logo Travelia"
+            android:src="@drawable/ic_travelia_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Ilustrasi OTP (Sekarang menempel ke imgLogoSmall) -->
+        <ImageView
+            android:id="@+id/imgOtpIllustration"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Ilustrasi OTP"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_otp_illustration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoSmall" />
+
+        <!-- Judul Header -->
+        <TextView
+            android:id="@+id/tvOtpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Masukkan Kode OTP"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgOtpIllustration" />
+
+        <TextView
+            android:id="@+id/tvOtpSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Check your inbox or spam from your email"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOtpTitle" />
+
+        <!-- Container 4 Digit Box OTP -->
+        <LinearLayout
+            android:id="@+id/layoutOtpBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOtpSubtitle">
+
+            <EditText
+                android:id="@+id/etOtp1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etOtp2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etOtp3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etOtp4"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_otp_box"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Resend OTP & Countdown -->
+        <LinearLayout
+            android:id="@+id/layoutResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutOtpBox">
+
+            <TextView
+                android:id="@+id/tvResendBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend OTP "
+                android:textColor="#4A69FF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in 60s"
+                android:textColor="#888888"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Tombol Selanjutnya -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:text="Selanjutnya"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FF8A3D"
+            app:cornerRadius="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutResend" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

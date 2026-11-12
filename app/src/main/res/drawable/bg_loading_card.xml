@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1 (Latar Belakang Cokelat/Oranye Tua untuk Lengkungan Atas) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#B23C00" />
+            <corners
+                android:topLeftRadius="28dp"
+                android:topRightRadius="28dp" />
+        </shape>
+    </item>
+
+    <!-- Layer 2 (Latar Utama Oranye Terang dengan Margin Atas untuk Efek Lengkungan Aksen) -->
+    <item android:top="30dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF7A22" />
+            <corners
+                android:topLeftRadius="24dp"
+                android:topRightRadius="24dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme (Dipaksa Light Theme) -->
+    <style name="Base.Theme.Travelia" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Color Primary Brand (Oranye Travelia) -->
+        <item name="colorPrimary">#FF7A22</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:windowBackground">#F5F5F5</item>
+        <item name="colorSurface">#FFFFFF</item>
+
+        <!-- PENTING: Mematikan paksaan Edge-to-Edge agar adjustResize di Register berfungsi normal -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+
+    </style>
+
+    <!-- Tema Utama Aplikasi -->
+    <style name="Theme.Travelia" parent="Base.Theme.Travelia">
+        <!-- Teks Input Berwarna Hitam Pekat -->
+        <item name="android:editTextColor">#111111</item>
+        <item name="android:textColorPrimary">#111111</item>
+
+        <!-- Paksa Dialog, DatePicker, dan TimePicker selalu Light Theme -->
+        <item name="android:dialogTheme">@android:style/Theme.Material.Light.Dialog</item>
+        <item name="android:datePickerDialogTheme">@android:style/Theme.Material.Light.Dialog</item>
+        <item name="android:timePickerDialogTheme">@android:style/Theme.Material.Light.Dialog</item>
+    </style>
+
+    <!-- Untuk Foto Profil Bulat Sempurna -->
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Untuk Gambar Artikel Sudut Melengkung -->
+    <style name="ShapeAppearance.App.RoundedSquare" parent="">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- Indikator Aktif Bottom Navigation (Oranye Opacity 10%) -->
+    <style name="CustomActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#1AFF7A22</item>
+    </style>
+
+</resources>

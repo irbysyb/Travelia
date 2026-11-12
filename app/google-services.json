@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921910978830",
+    "project_id": "travelia-d6477",
+    "storage_bucket": "travelia-d6477.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921910978830:android:328441b8d890544536cf5f",
+        "android_client_info": {
+          "package_name": "com.travelia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921910978830-vral2v2f8u9i48idtsfk8psfe0mf78sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvFGodLQoyIEJQTuoOc7mI88kPZvWPjbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921910978830-vral2v2f8u9i48idtsfk8psfe0mf78sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
