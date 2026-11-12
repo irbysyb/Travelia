@@ -8,8 +8,6 @@
         <item name="android:windowBackground">#F5F5F5</item>
         <item name="colorSurface">#FFFFFF</item>
 
-        <!-- PENTING: Mematikan paksaan Edge-to-Edge agar adjustResize di Register berfungsi normal -->
-        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
 
     </style>
 
